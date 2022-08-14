@@ -1,0 +1,90 @@
+# примеры API-запросов
+
+# @baseUrl = http://127.0.0.1:5001
+@baseUrl = http://localhost:5000
+# создание пользователя
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+  "name": "test_users",
+  "mail": "test@mail.ru",
+  "password" : "test"
+}
+
+###
+
+# получение пользователей
+GET {{baseUrl}}/users/
+Content-Type: application/json
+
+###
+
+# обновление пользователя
+PATCH {{baseUrl}}/users/11
+Content-Type: application/json
+
+{
+  "name": "test_users",
+  "mail": "test@mail.ru",
+  "password" : "test",
+  "new_password" : "test_patched"
+}
+
+###
+# удаление пользователя
+DELETE {{baseUrl}}/users/1
+Content-Type: application/json
+
+{
+  "password" : "test"
+}
+
+
+
+###
+# создание объявления
+POST {{baseUrl}}/adv/
+Content-Type: application/json
+
+{
+  "owner": "test",
+  "mail": "test@mail.ru",
+  "password": "test",
+  "title": "test_title",
+  "description": "test_dscr"
+}
+
+
+###
+# обновление объявления
+PATCH {{baseUrl}}/adv/1
+Content-Type: application/json
+
+{
+  "owner": "test",
+  "mail": "test@mail.ru",
+  "password": "test",
+  "title": "title has patched",
+  "description": "desc has patched"
+}
+
+
+###
+# удаление объявления
+DELETE {{baseUrl}}/adv/1
+Content-Type: application/json
+
+{
+  "owner": "test",
+  "mail": "test@mail.ru",
+  "password": "test"
+}
+
+
+###
+# получение объявлений
+GET {{baseUrl}}/adv/
+Content-Type: application/json
+
+###
